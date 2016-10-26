@@ -1,0 +1,8 @@
+TODO:
+1) basics
+2) composition
+3) ccc: pub/sub vs mediator
+4) external lib integration
+5) jQ plugin integrtion
+6) routing
+7) testing
