@@ -3,16 +3,16 @@ import Handlebars from "handlebars";
 import _ from "underscore";
 
 import templateHtml from "./google-map-view.template.html!text";
-import {GMap} from "./gmap";
+import { GMap } from "./gmap";
 
 export const GoogleMapView = BackBone.View.extend({
   template: Handlebars.compile(templateHtml),
 
-  initialize: function (params) {
+  initialize(params) {
   },
 
-  render: function () {
-    let htmlContent = this.template({name: Math.random()});
+  render() {
+    let htmlContent = this.template({ name: Math.random() });
     this.$el.html(htmlContent);
 
     //TODO 1: init map

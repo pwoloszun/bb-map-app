@@ -1,9 +1,9 @@
 import BackBone from "backbone";
-import {AppView} from "./app-view";
-import {DashboardView} from "./dashboard/dashboard-view";
-import {MapAppTaskView} from "./map-app-task/map-app-task-view";
-import {DataTableTaskView} from "./data-table-task/data-table-task-view";
-import {GoogleMapTaskView} from "./google-map-task/google-map-task-view";
+import { AppView } from "./app-view";
+import { DashboardView } from "./dashboard/dashboard-view";
+import { MapAppTaskView } from "./map-app-task/map-app-task-view";
+import { DataTableTaskView } from "./data-table-task/data-table-task-view";
+import { GoogleMapTaskView } from "./google-map-task/google-map-task-view";
 
 const AppRouter = BackBone.Router.extend({
   $rootEl: null,
@@ -18,46 +18,46 @@ const AppRouter = BackBone.Router.extend({
     "*smth": "redirectToDefault"
   },
 
-  initialize: function (params) {
+  initialize(params) {
     this.$rootEl = params.$rootEl;
     this.appView = new AppView();
     this.appView.render();
     this.$rootEl.html(this.appView.$el);
   },
 
-  showDashboard: function () {
+  showDashboard() {
     let dashboardView = new DashboardView();
     this.appView.renderChild(dashboardView);
   },
 
-  showDataTableTask: function () {
+  showDataTableTask() {
     let dttV = new DataTableTaskView();
     this.appView.renderChild(dttV);
   },
 
-  showGoogleMapTask: function () {
+  showGoogleMapTask() {
     let childV = new GoogleMapTaskView();
     this.appView.renderChild(childV);
   },
 
-  showMapAppTask: function () {
+  showMapAppTask() {
     let childV = new MapAppTaskView();
     this.appView.renderChild(childV);
   },
 
-  showAccessDenied: function () {
+  showAccessDenied() {
     this.appView.renderHtml("<h3>Access Denied</h3>");
   },
 
-  redirectToDefault: function () {
+  redirectToDefault() {
     this.redirectTo("dashboard");
   },
 
-  redirectTo: function (url) {
-    this.navigate(url, {trigger: true});
+  redirectTo(url) {
+    this.navigate(url, { trigger: true });
   },
 
-  start: function (usePushState) {
+  start(usePushState) {
     if (usePushState) {
       this.$rootEl.find('a').on("click", (event) => {
         let isLink = !event.target.href.match(/^#/)
@@ -66,7 +66,7 @@ const AppRouter = BackBone.Router.extend({
           this.redirectTo(event.target.pathname);
         }
       });
-      BackBone.history.start({pushState: true});
+      BackBone.history.start({ pushState: true });
     } else {
       BackBone.history.start();
     }
@@ -74,4 +74,4 @@ const AppRouter = BackBone.Router.extend({
 
 });
 
-export {AppRouter};
+export { AppRouter };

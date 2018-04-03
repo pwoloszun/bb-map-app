@@ -11,13 +11,12 @@ export const DataTableRowView = BackBone.View.extend({
 
   tagName: "tr",
 
-  events: {
+  events: {},
+
+  initialize(params) {
   },
 
-  initialize: function (params) {
-  },
-
-  render: function () {
+  render() {
   }
 
 });

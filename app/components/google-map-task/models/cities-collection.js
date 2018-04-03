@@ -1,12 +1,12 @@
 import BackBone from "backbone";
-import {City} from "./city";
+import { City } from "./city";
 
 export const CitiesCollection = BackBone.Collection.extend({
   url: "server/cities.json",
 
   model: City,
 
-  toggleSelected: function (city) {
+  toggleSelected(city) {
     let index = null;
     if (this.selected === city) {
       this.selected = null;
@@ -17,7 +17,7 @@ export const CitiesCollection = BackBone.Collection.extend({
     this.trigger("selected:changed", this.selected, index);
   },
 
-  isSelected: function (city) {
+  isSelected(city) {
     return this.selected === city;
   }
 });

@@ -1,5 +1,5 @@
 import BackBone from "backbone";
-import {RealEstate} from "./real-estate";
+import { RealEstate } from "./real-estate";
 
 export const RealEstatesCollection = BackBone.Collection.extend({
   url: "server/real-estates.json",
@@ -8,7 +8,7 @@ export const RealEstatesCollection = BackBone.Collection.extend({
 
   selected: null,
 
-  toggleSelected: function (realEstate) {
+  toggleSelected(realEstate) {
     let index = null;
     if (this.selected === realEstate) {
       this.selected = null;
@@ -19,7 +19,7 @@ export const RealEstatesCollection = BackBone.Collection.extend({
     this.trigger("selected:changed", this.selected, index);
   },
 
-  isSelected: function (realEstate) {
+  isSelected(realEstate) {
     return this.selected === realEstate;
   }
 });

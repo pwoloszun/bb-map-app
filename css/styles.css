@@ -6,3 +6,10 @@
 .gmap {
   height: 400px;
 }
+
+.details {
+  height: 460px;
+  margin: 10px;
+  padding: 16px;
+  background-color: chocolate;
+}

@@ -2,23 +2,23 @@ import BackBone from "backbone";
 import Handlebars from "handlebars";
 
 import templateHtml from "./data-table-task-view.template.html!text";
-import {DataTableView} from "../shared/data-table/data-table-view";
-import {HeroesCollection} from "./models/heroes-collection";
+import { DataTableView } from "../shared/data-table/data-table-view";
+import { HeroesCollection } from "./models/heroes-collection";
 
 export const DataTableTaskView = BackBone.View.extend({
   template: Handlebars.compile(templateHtml),
 
-  render: function () {
-    let htmlContent = this.template();
+  render() {
+    const htmlContent = this.template();
     this.$el.html(htmlContent);
 
-    let heroesCollection = new HeroesCollection();
-    let metaData = [
-      {value: "universe", text: "Komiksowe Uniwersum"},
-      {value: "name", text: "Imie"},
-      {value: "secretIdentity", text: "Tozsamosc"}
+    const heroesCollection = new HeroesCollection();
+    const metaData = [
+      { value: "universe", text: "Komiksowe Uniwersum" },
+      { value: "name", text: "Imie" },
+      { value: "secretIdentity", text: "Tozsamosc" }
     ];
-    let dataTableView = new DataTableView({
+    const dataTableView = new DataTableView({
       collection: heroesCollection,
       metaData: metaData
     });

@@ -7,10 +7,10 @@ import templateHtml from "./data-table-view.template.html!text";
 export const DataTableView = BackBone.View.extend({
   template: Handlebars.compile(templateHtml),
 
-  initialize: function (params) {
+  initialize(params) {
   },
 
-  render: function () {
+  render() {
     const htmlContent = this.template();
     this.$el.html(htmlContent);
 

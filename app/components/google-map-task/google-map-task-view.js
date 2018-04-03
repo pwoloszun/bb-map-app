@@ -8,7 +8,7 @@ import {CitiesCollection} from "./models/cities-collection";
 export const GoogleMapTaskView = BackBone.View.extend({
   template: Handlebars.compile(templateHtml),
 
-  render: function () {
+  render() {
     let htmlContent = this.template();
     this.$el.html(htmlContent);
 

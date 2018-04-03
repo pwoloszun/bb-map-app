@@ -5,11 +5,11 @@ import BackBone from "backbone";
 export const HeroesCollection = BackBone.Collection.extend({
   //TODO
 
-  toggleSelected: function (hero) {
+  toggleSelected(hero) {
     //TODO: "selected:changed"
   },
 
-  isSelected: function (hero) {
+  isSelected(hero) {
     //TODO
   }
 });

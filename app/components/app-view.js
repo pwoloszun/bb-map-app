@@ -7,19 +7,19 @@ const AppView = BackBone.View.extend({
   template: Handlebars.compile(templateHtml),
   childView: null,
 
-  render: function () {
+  render() {
     const htmlContent = this.template();
     this.$el.html(htmlContent);
   },
 
-  renderChild: function (childView) {
+  renderChild(childView) {
     this.$(".js-cont:first").html(childView.$el);
     childView.render();
   },
 
-  renderHtml: function (htmlContent) {
+  renderHtml(htmlContent) {
     this.$(".js-cont").html(htmlContent);
   }
 });
 
-export {AppView};
+export { AppView };
