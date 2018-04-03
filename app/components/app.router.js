@@ -31,15 +31,18 @@ const AppRouter = BackBone.Router.extend({
   },
 
   showDataTableTask: function () {
-    // TODO
+    let dttV = new DataTableTaskView();
+    this.appView.renderChild(dttV);
   },
 
   showGoogleMapTask: function () {
-    //TODO
+    let childV = new GoogleMapTaskView();
+    this.appView.renderChild(childV);
   },
 
   showMapAppTask: function () {
-    //TODO
+    let childV = new MapAppTaskView();
+    this.appView.renderChild(childV);
   },
 
   showAccessDenied: function () {
